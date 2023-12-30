@@ -2,6 +2,8 @@
 # split it until the number of element in list become 1: merge_sort(arr)
 # after merge it with sorting: merge(a, b)
 
+import randomlist
+
 def merge_sort(arr):
     n = len(arr)
     if n <= 1:
@@ -33,5 +35,6 @@ def merge(a, b):
     
     return result
     
-arr = [1, 4, 2, 3, 1, 6, 3, 4, 8, 2]
-print(merge_sort(arr))
+arr = randomlist.make_list(10)
+print(f'original list: {arr}')
+print(f'sorted using mergesort: {merge_sort(arr)}')

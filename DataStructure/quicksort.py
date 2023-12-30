@@ -3,6 +3,8 @@
 # split the input list into three lists
 # list S: smaller than p, list E: equal to p, list G: greater than p
 
+from randomlist import make_list
+
 def quick_sort(arr):
     n = len(arr)        # length of input list
     pivot = arr[n // 2]   # choose any value for pivot
@@ -29,5 +31,6 @@ def quick_sort(arr):
 
     return quick_sort(S) + E + quick_sort(G)    # recursion
 
-arr = [1, 4, 2, 3, 1, 6, 3, 4, 8, 2]
-print(quick_sort(arr))
+arr = make_list(10)
+print(f'original list: {arr}')
+print(f'sorted using quicksort: {quick_sort(arr)}')
