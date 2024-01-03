@@ -1,3 +1,7 @@
+## Just Test
+# strategy
+
+
 def compare(a, b):
     if a > b:
         print(">")
