@@ -1,9 +1,21 @@
 def max_meeting_room():
     schedule = input_meeting_schedule()
-    schedule = sorted(schedule)     # sort by 1. starting time, 2. end time
-    print(schedule)
-    result = 0
+    schedule = sorted(schedule, key=lambda x : (x[1], x[0]))     # sort by 1. end time, 2. starting time
+    #print(schedule)
+    result = 1
     pointer = 0
+
+    for i in range(1, len(schedule)):
+        if schedule[pointer][1] <= schedule[i][0]:
+            pointer = i
+            result += 1
+
+        
+    return result
+
+    '''
+    # O(N)
+    # sort by 1. starting time, 2. end time
     for i in range(1, len(schedule)):
         if schedule[pointer][0] <= schedule[i][0] and schedule[pointer][1] >= schedule[i][1] and schedule[pointer][1] != schedule[i][0]:
             pointer = i
@@ -12,8 +24,10 @@ def max_meeting_room():
             result += 1
 
     return result + 1
+    '''
 
     '''
+    # O(N^2)
     for i in range(len(schedule)):
         cnt = 0
         idx = i
