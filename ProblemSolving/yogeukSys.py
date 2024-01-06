@@ -1,4 +1,5 @@
-
+# how can deal with [0, 4], [1, 3], [3, 4]?
+# sort by end point -> start point
 
 def pang(targets):
     targets = sorted(targets, key=lambda x : (x[1], x[0]))
