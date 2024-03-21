@@ -29,4 +29,4 @@ def solution(a, b):
         ans = (b + 31 + 29 + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31) % 7
     elif a == 12:
         ans = (b + 31 + 29 + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31 + 30) % 7
-    return ans
+    return answer[ans]
