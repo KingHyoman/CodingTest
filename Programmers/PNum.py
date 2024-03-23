@@ -6,7 +6,6 @@ import math
 
 def isPrime(n):
     pivot = int(math.sqrt(n))
-    print(pivot)
     for i in range(2, pivot + 1):
         if n % i == 0:
             return False
@@ -17,6 +16,4 @@ def solution(n):
     for i in range(1, n + 1):
         if isPrime(i):
             answer += 1
-    return answer
-
-print(isPrime(7))
+    return answer - 1
