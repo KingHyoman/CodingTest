@@ -18,6 +18,7 @@ def solution(d, budget):
     return 0
 ## time over
 
+
 def solution(d, budget):
     d = sorted(d)   
     while sum(d) > budget:
