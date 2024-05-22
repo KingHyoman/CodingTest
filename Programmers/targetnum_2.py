@@ -8,7 +8,7 @@
 # So the answer is 5
 
 def solution(numbers, target):
-    # using tree structures
+    # using tree structures(BFS)
     answers = [0]
     parent = 0
 
@@ -28,3 +28,27 @@ def solution(numbers, target):
             cnt += 1
 
     return cnt
+
+
+# using dfs
+# using global variable for counting
+cnt_dfs = 0
+
+def solution(numbers, targets):
+    def dfs(numbers, targets, idx, val):
+        global cnt_dfs
+        # check if is it leaf
+        if idx == len(numbers):
+            # if it is leaf, then check is it target
+            if targets == val:
+                cnt_dfs += 1
+            return
+        
+        # + operation
+        dfs(numbers, targets, idx + 1, val + numbers[idx])
+        # - operation
+        dfs(numbers, targets, idx + 1, val - numbers[idx])
+    
+    # using recursion to use dfs
+    dfs(numbers, targets, 0, 0)
+    return cnt_dfs
