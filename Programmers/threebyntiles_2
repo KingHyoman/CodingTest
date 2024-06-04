@@ -1,0 +1,41 @@
+# There is a tile: 2 * 1
+# We want to fill the given space using this tiles
+# Given space: n * 3
+# Find the num that all cases of filling the given space
+
+# Strategy: find the recurrence relation
+# The given space's area is n * 3, thus we can fill this space
+# when n is even
+# First, write all cases, (n, the num)
+# 2 -> 3
+# 4 -> 11 = 3 * 3 + 2 * 1
+# 6 -> 41 = 3 * 11 + 2 * (3 + 1)
+# 8 -> 153 = 3 * 41 + 2 * (11 + 4)
+# ...
+# f(n) = 3 * f(n - 1) + 2 * (f(n - 2) + alpha)
+
+def solution(n):
+    answer = 0
+    if n % 2 != 0:
+        return 0
+    else:
+        if n == 2:
+            return 3
+        elif n == 4:
+            return 11
+        
+        n_2, n_1, n_0 = 1, 3, 11
+        
+        for i in range(4, n + 1, 2):
+            new_num = 3 * n_0 + (n_1 + n_2) * 2
+            n_2 = n_2 + n_1
+            n_1 = n_0
+            n_0 = new_num
+            #print(f"n: {n_0}, n-1: {n_1}, n-2: {n_2}")
+            
+
+
+    return n_1 % 1000000007
+
+for i in range(1, 11):
+    print(solution(i))
