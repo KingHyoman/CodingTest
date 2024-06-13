@@ -1,6 +1,7 @@
 # Find the max and min from given string
 # ex) "1 2 3 4 5"
 # return "1 5"
+#
 
 def solution(s):
     tem = ''
