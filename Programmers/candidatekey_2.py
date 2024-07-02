@@ -16,6 +16,9 @@
 
 # Strategy: figure out all avaliable keys
 # and filter it with uniqueness and minimality
+# the len of column: 1 ~ 8
+# the len of row: 1 ~ 20
+# Thus it is okay to check all cases
 import itertools
 
 def solution(relation):
