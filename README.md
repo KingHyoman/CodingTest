@@ -1,3 +1,4 @@
-# CodingTest
+# CodingTest Practice
 
-## Challenge: Solve the algorithm problem every day
+## Challenge
+Solve an algorithm problem every day
