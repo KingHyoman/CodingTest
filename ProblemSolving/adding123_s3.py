@@ -5,6 +5,7 @@
 # Each test case consists of an integer written in a single line.
 # Output
 # Print exactly one line for each test case. 
+# For test
 
 import sys
 
